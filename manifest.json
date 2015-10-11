@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Censor",
-  "description": "Censor negative messages from social media",
+  "description": "Censor negative messages from social media like twitter",
   "version": "1.0",
 
   "browser_action": {
