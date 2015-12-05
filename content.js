@@ -1,5 +1,22 @@
-replaceTextOnPage('hello', 'hi');
+var bkg = chrome.extension.getBackgroundPage();
+var bad = ["Taco","Have","seen","you"]; 
 
+//Fix
+for (var i = 0; i < bad.length; i++) {
+    replaceText(bad[i]);
+}
+
+function replaceText(t){
+replaceTextOnPage(t, getStars(t));
+}
+
+function getStars(str){
+text = "";
+for (i = 0; i < str.length; i++) { 
+    text += "*";
+} 
+return text;
+}
 
 function replaceTextOnPage(from, to){
   getAllTextNodes().forEach(function(node){
