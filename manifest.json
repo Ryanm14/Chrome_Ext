@@ -2,25 +2,22 @@
   "manifest_version": 2,
 
   "name": "Censor",
-  "description": "Censor negative messages from social media like twitter",
+  "description": "Censor negative messages from social media",
   "version": "1.0",
-  "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-            "js": [
-                "content.js"
-            ],
-            "run_at": "document_end"
-        }
-    ]
+  "icons": { 
+   "64" : "icon.png"
+  },
+
   "browser_action": {
    "default_icon": "icon.png",
    "default_popup": "popup.html"
   },
-  "permissions": [
-   "activeTab"
-   ]
+
+  "content_scripts": [
+   {
+   "matches": ["http://*/*", "https://*/*"],
+   "js": ["content.js"]
+   }
+  ]
+  
 }
