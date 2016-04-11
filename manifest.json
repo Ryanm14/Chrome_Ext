@@ -1,23 +1,27 @@
 {
   "manifest_version": 2,
 
-  "name": "Censor",
-  "description": "Censor negative messages from social media",
-  "version": "1.0",
+  "name": "Word Cop",
+  "short_name": "Word Cop",
+  "description": "Word Cop censors profanity and inappropriate words on the Internet.",
+  "version": "1.21",
+  "offline_enabled": true,
+ 
+  "permissions": [
+    "tabs", "<all_urls>","storage","browsingData"
+  ],
   "icons": { 
    "64" : "icon.png"
   },
-
-  "browser_action": {
-   "default_icon": "icon.png",
-   "default_popup": "popup.html"
-  },
-
   "content_scripts": [
-   {
-   "matches": ["http://*/*", "https://*/*"],
-   "js": ["content.js"]
-   }
-  ]
-  
+    {
+      "matches":["<all_urls>"],
+      "js":["functions.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["scripts.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["words.json"]
 }
